@@ -13,7 +13,7 @@ model = models.resnet18(pretrained=True)
 num_classes = 87   
 model.fc = nn.Linear(model.fc.in_features, num_classes)
 model = model.to(device)
-model.load_state_dict(torch.load("model_checkpoint_rest_net_ge.pth", map_location=device))
+model.load_state_dict(torch.load("model_checkpoint_rest_net_ge.pth", map_location=device, weights_only=True))))
 model.eval()   
 
  
